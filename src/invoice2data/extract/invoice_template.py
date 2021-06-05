@@ -208,5 +208,5 @@ class InvoiceTemplate(OrderedDict):
 	# @vk001716
 
         if len(output.keys()) > 0 :
-            return dict(output)
-        return {}
+            return output
+        return defaultdict()
