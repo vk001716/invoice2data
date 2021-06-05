@@ -209,27 +209,4 @@ class InvoiceTemplate(OrderedDict):
 
         if len(output.keys()) > 0 :
             return dict(output)
-        return None
-        
-        
-        
-        # If required fields were found, return output, else log error.
-        if 'required_fields' not in self.keys():
-            required_fields = ['date', 'amount', 'invoice_number', 'issuer']
-        else:
-            required_fields = []
-            for v in self['required_fields']:
-                required_fields.append(v)
-
-        if set(required_fields).issubset(output.keys()):
-            output['desc'] = 'Invoice from %s' % (self['issuer'])
-            logger.debug(output)
-            return output
-        else:
-            fields = list(set(output.keys()))
-            logger.error(
-                'Unable to match all required fields. '
-                'The required fields are: {0}. '
-                'Output contains the following fields: {1}.'.format(required_fields, fields)
-            )
-            return None
+        return {}
