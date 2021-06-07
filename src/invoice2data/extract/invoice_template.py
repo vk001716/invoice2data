@@ -96,7 +96,7 @@ class InvoiceTemplate(OrderedDict):
         if all([keyword in optimized_str for keyword in self['keywords']]):
             logger.debug('Matched template %s', self['template_name'])
 	# @vk001716
-	return True
+        return True
 
     def parse_number(self, value):
         assert (
