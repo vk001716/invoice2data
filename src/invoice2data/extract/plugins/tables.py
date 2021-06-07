@@ -48,7 +48,7 @@ def extract(self, content, output):
                     extracted.append(value)
                     if value not in extracted:
                         # If a field name already exists, do not overwrite it
-                        if field in output and :
+                        if field in output :
                             i = i+1
                             field = field + str(i)
 
