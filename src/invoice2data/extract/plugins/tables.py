@@ -12,7 +12,8 @@ DEFAULT_OPTIONS = {'field_separator': r'\s+', 'line_separator': r'\n'}
 
 def extract(self, content, output):
     """Try to extract tables from an invoice"""
-    print("table plugin called")
+    # @vk001716
+    extracted = []
     i=0
     for table in self['tables']:
 
@@ -43,19 +44,21 @@ def extract(self, content, output):
             match = re.search(table['body'], line)
             if match:
                 for field, value in match.groupdict().items():
-                    # If a field name already exists, do not overwrite it
-                    print(field)
-                    if field in output:
-                        i = i+1
-                        field = field + str(i)
+                    # @vk001716
+                    extracted.append(value)
+                    if value not in extracted:
+                        # If a field name already exists, do not overwrite it
+                        if field in output and :
+                            i = i+1
+                            field = field + str(i)
 
-                    if field.startswith('date') or field.endswith('date'):
-                        output[field] = self.parse_date(value)
-                        if not output[field]:
-                            logger.error("Date parsing failed on date '%s'", value)
-                            return None
-                    elif field.startswith('amount'):
-                        output[field] = self.parse_number(value)
-                    else:
-                        output[field] = value
+                        if field.startswith('date') or field.endswith('date'):
+                            output[field] = self.parse_date(value)
+                            if not output[field]:
+                                logger.error("Date parsing failed on date '%s'", value)
+                                return None
+                        elif field.startswith('amount'):
+                            output[field] = self.parse_number(value)
+                        else:
+                            output[field] = value
             logger.debug('ignoring *%s* because it doesn\'t match anything', line)
