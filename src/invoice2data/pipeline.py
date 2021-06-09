@@ -18,7 +18,7 @@ def caller_function ():
 try:
     os.chdir('/home/ubuntu/invoice-reader')
 except Exception as e:
-    pass
+    print("directory not changed to /home/ubuntu/invoice-reader")
 
 print(master_json)
 
