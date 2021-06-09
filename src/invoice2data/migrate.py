@@ -6,7 +6,7 @@ import yaml
 import json
 from invoice2data import extract_data
 from invoice2data.extract.loader import read_templates
-import pdftotext
+# import pdftotext
 #from tabula.io import read_pdf
 # from invoice2data.input import tesseract4
 
