@@ -10,7 +10,10 @@ from invoice2data.extract.loader import read_templates
 #from tabula.io import read_pdf
 # from invoice2data.input import tesseract4
 
-
+try:
+    os.chdir('/home/ubuntu/invoice-reader')
+except Exception as e:
+    print("home directory not changed to /home/ubuntu/invoice-reader")
 
 
 # @app.route("/extract_data", methods = ['POST', 'GET'])
