@@ -6,7 +6,7 @@ import json
 import yaml
 from datetime import datetime
 import inspect
-from config import *
+from .config import *
 
 
 def whoami():
