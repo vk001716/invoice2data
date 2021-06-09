@@ -7,6 +7,7 @@ import yaml
 from datetime import datetime
 import inspect
 from .config import *
+from .migrate import *
 
 
 def whoami():
