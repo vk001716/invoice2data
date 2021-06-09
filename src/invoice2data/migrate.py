@@ -27,6 +27,7 @@ def extract_data_(filename_pdf):
     templates = read_templates(templates_folder)
     result = extract_data(os.getcwd()
                           + filename_pdf, templates=templates)
+    del result['issuer']
     print(result)
     return result
 
