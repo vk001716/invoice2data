@@ -15,7 +15,10 @@ def whoami():
 def caller_function ():
     return inspect.stack()[2][3]
 
-
+try:
+    os.chdir('/home/ubuntu/invoice-reader')
+except Exception as e:
+    pass
 
 print(master_json)
 
