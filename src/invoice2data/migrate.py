@@ -15,12 +15,12 @@ from invoice2data.extract.loader import read_templates
 
 # @app.route("/extract_data", methods = ['POST', 'GET'])
 def extract_data_(filename_pdf):
-    os.chdir('/home/drishte/invoice-reader')
+#     os.chdir('/home/drishte/invoice-reader')
     print(os.getcwd())
     templates_folder = 'master_template'
     print('**********************************')
-    print(os.getcwd())
-    os.system('pwd')
+#     print(os.getcwd())
+#     os.system('pwd')
     templates = read_templates(templates_folder)
     result = extract_data(os.getcwd()
                           + filename_pdf, templates=templates)
