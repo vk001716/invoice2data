@@ -3,14 +3,13 @@ This module abstracts templates for invoice providers.
 
 Templates are initially read from .yml files and then kept as class.
 """
-
 import re
 import dateparser
 from unidecode import unidecode
 import logging
 from collections import OrderedDict
 from .plugins import lines, tables
-
+from ..config import *
 from collections import defaultdict
 logger = logging.getLogger(__name__)
 
@@ -207,7 +206,12 @@ class InvoiceTemplate(OrderedDict):
             if plugin_keyword in self.keys():
                 plugin_func.extract(self, optimized_str, output)
 	# @vk001716
-
+	out = defaultdict()
+	for m in re.finditer(regex,optimized_str ):
+            match = testing_str[int(m.start()) : int(m.end())]
+            print(match)
+            out[str(match.split(':')[0].strip())] =  str(match.split(':')[1].strip())
+	output['nlp result'] = dict(out)
         if len(output.keys()) > 0 :
-            return output
+            return dict(output)
         return defaultdict()
