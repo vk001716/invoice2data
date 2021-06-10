@@ -206,7 +206,7 @@ class InvoiceTemplate(OrderedDict):
             if plugin_keyword in self.keys():
                 plugin_func.extract(self, optimized_str, output)
 	# @vk001716
-	out = defaultdict()
+        out = defaultdict()
 	for m in re.finditer(regex,optimized_str ):
             match = testing_str[int(m.start()) : int(m.end())]
             print(match)
