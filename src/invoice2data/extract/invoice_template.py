@@ -204,11 +204,11 @@ class InvoiceTemplate(OrderedDict):
             if plugin_keyword in self.keys():
                 plugin_func.extract(self, optimized_str, output)
         # @vk001716
-        out = defaultdict()
-        for m in re.finditer(regex, optimized_str):
-            match = optimized_str[int(m.start()): int(m.end())]
-            print(match)
-            out[str(match.split(':')[0].strip())] = str(
-                match.split(':')[1].strip())
-            output['nlp result'] = dict(out)
+        # out = defaultdict()
+        # for m in re.finditer(regex, optimized_str):
+        #     match = optimized_str[int(m.start()): int(m.end())]
+        #     print(match)
+        #     out[str(match.split(':')[0].strip())] = str(
+        #         match.split(':')[1].strip())
+        #     output['nlp result'] = dict(out)
         return dict(output)
