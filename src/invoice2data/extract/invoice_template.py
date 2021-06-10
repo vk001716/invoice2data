@@ -146,7 +146,7 @@ class InvoiceTemplate(OrderedDict):
                      self.options['decimal_separator'])
         logger.debug("keywords=%s", self['keywords'])
         logger.debug(self.options)
-
+        print("optimized_str={}".format(optimized_str))
         # Try to find data for each field.
         # @vk001716
         output = defaultdict()
