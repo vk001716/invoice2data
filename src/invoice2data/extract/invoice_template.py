@@ -199,7 +199,6 @@ class InvoiceTemplate(OrderedDict):
                 else:
                     logger.warning("regexp for field %s didn't match", k)
 
-        #output['currency'] = self.options['currency']
         # Run plugins:
         for plugin_keyword, plugin_func in PLUGIN_MAPPING.items():
             if plugin_keyword in self.keys():
