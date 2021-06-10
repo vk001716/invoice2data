@@ -114,7 +114,6 @@ def update_master_yml_file()-> None:
         regex_value = '|'.join(set([i for i in key_value[list(key_value.keys())[0]]])) 
         if len(regex_value) > 0:
             formated_json['fields'][list(key_value.keys())[0]]  = regex_value
-    del formated_json['fields']['Default']
     formated_json['fields'] = dict(formated_json['fields'])
     if len(formated_json['fields']) == 0:
         del formated_json['fields']
