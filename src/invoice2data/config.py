@@ -23,3 +23,4 @@ master_template_folder = 'master_template'
 master_template_yml_file = 'master.yml'
 removed_json_file = 'removed_json.json'
 updated_json_file = 'updated_json.json'
+regex = r"\s{0,2}(\w\s{0,2})+\s{0,5}\:\s{0,5}(\S+\s{1,2})*"
