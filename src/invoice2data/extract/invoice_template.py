@@ -94,7 +94,7 @@ class InvoiceTemplate(OrderedDict):
 
         if all([keyword in optimized_str for keyword in self['keywords']]):
             logger.debug('Matched template %s', self['template_name'])
-	# @vk001716
+        # @vk001716
         return True
 
     def parse_number(self, value):
@@ -142,12 +142,13 @@ class InvoiceTemplate(OrderedDict):
             self.options['languages'],
             self.options['date_formats'],
         )
-        logger.debug('Float parsing: decimal separator=%s', self.options['decimal_separator'])
+        logger.debug('Float parsing: decimal separator=%s',
+                     self.options['decimal_separator'])
         logger.debug("keywords=%s", self['keywords'])
         logger.debug(self.options)
 
         # Try to find data for each field.
-        #@vk001716
+        # @vk001716
         output = defaultdict()
         output['issuer'] = self['issuer']
 
@@ -179,7 +180,8 @@ class InvoiceTemplate(OrderedDict):
                     if (k.startswith('date') or k.endswith('date')) and False:
                         output[k] = self.parse_date(res_find[0])
                         if not output[k]:
-                            logger.error("Date parsing failed on date '%s'", res_find[0])
+                            logger.error(
+                                "Date parsing failed on date '%s'", res_find[0])
                             return None
                     elif (k.startswith('amount')) and False:
                         if sum_field:
@@ -197,21 +199,17 @@ class InvoiceTemplate(OrderedDict):
                 else:
                     logger.warning("regexp for field %s didn't match", k)
 
-        
-	
-	
         #output['currency'] = self.options['currency']
         # Run plugins:
         for plugin_keyword, plugin_func in PLUGIN_MAPPING.items():
             if plugin_keyword in self.keys():
                 plugin_func.extract(self, optimized_str, output)
-	# @vk001716
+            # @vk001716
         out = defaultdict()
-	for m in re.finditer(regex,optimized_str ):
-            match = testing_str[int(m.start()) : int(m.end())]
+        for m in re.finditer(regex, optimized_str):
+            match = optimized_str[int(m.start()): int(m.end())]
             print(match)
-            out[str(match.split(':')[0].strip())] =  str(match.split(':')[1].strip())
-	output['nlp result'] = dict(out)
-        if len(output.keys()) > 0 :
-            return dict(output)
-        return defaultdict()
+            out[str(match.split(':')[0].strip())] = str(
+                match.split(':')[1].strip())
+            output['nlp result'] = dict(out)
+        return dict(output)
