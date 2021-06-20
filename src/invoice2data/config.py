@@ -23,4 +23,12 @@ master_template_folder = 'master_template'
 master_template_yml_file = 'master.yml'
 removed_json_file = 'removed_json.json'
 updated_json_file = 'updated_json.json'
-regex = r"([\S] {0,2})+ {0,5}\: *(\S{1} {0,2})*"
+regex = r"(\S\ {0,3})+\ {0,5}\:{1}\ {0,5}(\S)+"
+garbage_data = [
+    'http',
+    'https'
+]
+garbage_value = [
+    '.com',
+    '.in',
+]
