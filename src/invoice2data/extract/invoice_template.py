@@ -208,7 +208,8 @@ class InvoiceTemplate(OrderedDict):
         for m in re.finditer(regex, optimized_str):
             match = optimized_str[int(m.start()): int(m.end())]
             print(match)
-            out[str(match.split(':')[0].strip())] = str(
-                match.split(':')[1].strip())
+            if len(str(match.split(':')[1].strip())) > 0:
+                out[str(match.split(':')[0].strip())] = str(
+                    match.split(':')[1].strip())
         output['nlp result'] = dict(out)
         return dict(output)

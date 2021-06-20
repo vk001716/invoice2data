@@ -1,0 +1,78 @@
+                                                                  Wizrdom Marketing & IT Solutions LLP
+                                                                  Registered Office:
+                                                                  Y3-101, Greenwood Regency,
+                                                                  Sarjapur Road, Doddakannelli,
+                                                                  Bangalore – 560035.
+
+                                             TAX INVOICE
+                                                                                        Date: 02-05-2019
+ Invoice Number: WIZ/CLO/006/1819
+ Customer                                                  Clonect Solutions Private Limited
+ Customer ID#                                              007
+ Address                                                   #75, Ground Floor, 17th Main, 3rd Cross,
+                                                           Koramangala 2nd Block, Bangalore - 560034
+ GSTIN                                                     29AAFCC6785L1ZW
+ Phone                                                     +91 99893 37881
+ Invoice Period                                            1st Apr to 30th Apr 2019
+
+
+ Item#     Description                                           Unit Price      Discount         Line Total
+   1       SEO Services                                               25,000/-              -         25,000/-
+
+
+                                                 Sub-total                                            25,000/-
+                                              CGST (@9%)                                                2250/-
+                                              SGST (@9%)                                                2250/-
+                                                                                      Total           29,500/-
+
+Payment to be made via NEFT to:
+A/c Name    Wizrdom Marketing & IT Solutions LLP
+A/c No.      917020024975130
+IFSC         UTIB0001888
+Bank Branch Axis Bank, Sarjapur Road, Bangalore - 560035
+
+PAN: ACFW4991L
+Goods & Service Tax (GSTIN) No.: 29AACFW4991L1ZD
+Service Acc. Code: 998311 (Management, Marketing & IT Consulting Services)
+
+For WIZRDOM MARKETING & IT SOLUTIONS LLP
+
+
+
+
+Authorized Signatory                                                                               E & O. E
+Thank you for your business!
+
+
+Registered Address:
+Y3-101, Green Wood Regency, Sarjapur Road, Doddakannelli, Near Wipro Corporate Office, Bengaluru –
+560035. LLP Identification Number: AAI-1075                                       http://wizrdom.com
+
+2021-06-20 10:22:43 [WARNING] invoice2data.extract.invoice_template - regexp for field sample1 didn't match
+  Registered Office:
+    
+  Date: 02-05-2019
+ Invoice Number: WIZ/CLO/006/1819
+ Customer  
+
+
+Payment to be made via NEFT to:
+A/c Name  
+ 560035
+
+PAN: ACFW4991L
+Goods & Service Tax (GSTIN) No.: 29AACFW4991L1ZD
+Service Acc. Code: 998311 (Management, Marketing & IT Consulting Services)
+
+For WIZRDOM MARKETING & IT SOLUTIONS LLP
+
+
+
+
+Registered Address:
+Y3-101, Green Wood Regency, Sarjapur Road, Doddakannelli, Near Wipro Corporate Office, Bengaluru –
+560035. LLP Identification Number: AAI-1075  
+  http://wizrdom.com
+  
+  
+ ###################################################################################################################################
