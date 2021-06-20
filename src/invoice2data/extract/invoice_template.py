@@ -211,5 +211,8 @@ class InvoiceTemplate(OrderedDict):
             if len(str(match.split(':')[1].strip())) > 0:
                 out[str(match.split(':')[0].strip())] = str(
                     match.split(':')[1].strip())
+        for key in list(out.keys()):
+            if key in garbage_data or out[key] in garbage_value:
+                del out[key]
         output['nlp result'] = dict(out)
         return dict(output)
