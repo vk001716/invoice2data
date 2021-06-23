@@ -165,6 +165,7 @@ class InvoiceTemplate(OrderedDict):
                     sum_field = True
                 # Fields can have multiple expressions
                 if type(v) is list:
+                    print("type of {} is list".format(str(v)))
                     res_find = []
                     for v_option in v:
                         res_val = re.findall(v_option, optimized_str)
@@ -191,6 +192,7 @@ class InvoiceTemplate(OrderedDict):
                         else:
                             output[k] = self.parse_number(res_find[0])
                     else:
+                        print(k,v,str(res_find))
                         res_find = list(set(res_find))
                         if len(res_find) == 1:
                             output[k] = res_find[0]
