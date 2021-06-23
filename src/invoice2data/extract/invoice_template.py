@@ -175,7 +175,9 @@ class InvoiceTemplate(OrderedDict):
                             else:
                                 res_find.extend(res_val)
                 else:
-                    res_find = re.findall(v, optimized_str)
+                    res_find = re.finditer(v, optimized_str)
+                    res_find = [ i for i in res_find ]
+                    res_find = res_find if len(res_find) > 0 else None 
                 if res_find:
                     logger.debug("res_find=%s", res_find)
                     if (k.startswith('date') or k.endswith('date')) and False:
@@ -192,12 +194,21 @@ class InvoiceTemplate(OrderedDict):
                         else:
                             output[k] = self.parse_number(res_find[0])
                     else:
+                        # Only this part is executing
                         print(k,v,str(res_find))
+                        output[k] = []
                         res_find = list(set(res_find))
-                        if len(res_find) == 1:
-                            output[k] = res_find[0]
-                        else:
-                            output[k] = res_find
+                        for value in  res_find:
+                            trimmed_value = value.replace(k,"").strip()
+                            if trimmed_value in remove_initial_character:
+                                if len(trimmed_value) > 2:
+                                    trimmed_value = trimmed_value[1:]
+                                    trimmed_value = trimmed_value.strip()
+                                    output[k].append(trimmed_value)
+                            else:
+                                output[k].append(trimmed_value)
+                        if len(output[k]) == 0:
+                            del output[k]
                 else:
                     logger.warning("regexp for field %s didn't match", k)
 
