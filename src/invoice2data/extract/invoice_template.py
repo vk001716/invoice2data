@@ -200,7 +200,7 @@ class InvoiceTemplate(OrderedDict):
                         res_find = list(set(res_find))
                         for value in  res_find:
                             trimmed_value = value.replace(k,"").strip()
-                            if trimmed_value in remove_initial_character:
+                            if trimmed_value[0] in remove_initial_character:
                                 if len(trimmed_value) > 2:
                                     trimmed_value = trimmed_value[1:]
                                     trimmed_value = trimmed_value.strip()
