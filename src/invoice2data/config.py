@@ -32,3 +32,7 @@ garbage_value = [
     '.com',
     '.in',
 ]
+remove_initial_character =[
+    ":",
+    "-"
+]
