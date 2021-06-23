@@ -176,7 +176,7 @@ class InvoiceTemplate(OrderedDict):
                                 res_find.extend(res_val)
                 else:
                     res_find = re.finditer(v, optimized_str)
-                    res_find = [ i for i in res_find ]
+                    res_find = [ i.group() for i in res_find ]
                     res_find = res_find if len(res_find) > 0 else None 
                 if res_find:
                     logger.debug("res_find=%s", res_find)
