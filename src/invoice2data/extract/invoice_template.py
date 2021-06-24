@@ -228,5 +228,5 @@ class InvoiceTemplate(OrderedDict):
         for key in list(out.keys()):
             if key in garbage_data or out[key] in garbage_value:
                 del out[key]
-        output['nlp result'] = dict(out)
+        output['From base model'] = dict(out)
         return dict(output)
