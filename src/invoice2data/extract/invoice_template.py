@@ -201,13 +201,14 @@ class InvoiceTemplate(OrderedDict):
                         for value in  res_find:
                             trimmed_value = value.replace(k,"").strip()
                             print(k,value,trimmed_value)
-                            if trimmed_value[0] in remove_initial_character:
-                                if len(trimmed_value) > 2:
-                                    trimmed_value = trimmed_value[1:]
-                                    trimmed_value = trimmed_value.strip()
+                            if len(trimmed_value) > 2:
+                                if trimmed_value[0] in remove_initial_character:
+                                    if len(trimmed_value) > 2:
+                                        trimmed_value = trimmed_value[1:]
+                                        trimmed_value = trimmed_value.strip()
+                                        output[k].append(trimmed_value)
+                                else:
                                     output[k].append(trimmed_value)
-                            else:
-                                output[k].append(trimmed_value)
                         if len(output[k]) == 0:
                             del output[k]
                 else:
