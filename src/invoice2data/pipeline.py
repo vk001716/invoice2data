@@ -8,7 +8,7 @@ from datetime import datetime
 import inspect
 from .config import *
 from .migrate import *
-from .scripts import *
+# from .scripts import *
 
 def whoami():
     return inspect.stack()[1][3]
