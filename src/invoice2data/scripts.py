@@ -52,7 +52,9 @@ def convert_image_to_string(image_files):
     if "reader" not in globals():
         global reader 
         if os.path.exists("/home/ubuntu/invoice-reader"):
-            reader = easyocr.Reader(['en'], gpu = False, model_storage_directory = "/home/ubuntu/invoice-reader")
+            os.environ("EASYOCR_MODULE_PATH") = "/home/ubuntu/invoice-reader/easyocr"
+            os.environ("MODULE_PATH") = "/home/ubuntu/invoice-reader/easyocr"
+            reader = easyocr.Reader(['en'], gpu = False)
         else:
             reader = easyocr.Reader(['en'], gpu = False)
     reader_results = []
