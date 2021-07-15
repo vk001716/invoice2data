@@ -1,6 +1,6 @@
 
 global reader
-
+from invoice2data import *
 
 
 
