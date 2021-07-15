@@ -112,4 +112,4 @@ def image_pdf_final_result(pdf_file):
     '''
     image_2_string = image_pdf_string(pdf_file)
     new_pdf_file = convert_string_to_pdf(image_2_string)
-    return new_pdf_file
+    return extract_data_(new_pdf_file)
