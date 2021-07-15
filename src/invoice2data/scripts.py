@@ -1,7 +1,7 @@
 
 global reader
 from invoice2data import *
-from .migrate import *
+# from .migrate import *
 
 
 
