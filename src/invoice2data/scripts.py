@@ -2,8 +2,12 @@
 global reader
 from invoice2data import *
 from .migrate import *
+import os
 
-
+try:
+    os.chdir('/home/ubuntu/invoice-reader')
+except Exception as e:
+    print("directory not changed to /home/ubuntu/invoice-reader")
 
 def whoami():
     import inspect
