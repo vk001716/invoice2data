@@ -30,7 +30,7 @@ def convert_pdf_to_image(pdf_file):
         print("directory not changed to /home/ubuntu/invoice-reader")
     import os
     from pdf2image import convert_from_path
-    temp_directory = "temp_directory"
+    temp_directory = os.path.join(os.getcwd(),"temp_directory")
     os.system(f"rm -r {temp_directory}")
     os.system("mkdir -p {}".format(temp_directory))
     images = convert_from_path(pdf_file)
@@ -105,8 +105,8 @@ def convert_string_to_pdf(string_list, pdf_file = "image-string-pdf.pdf"):
     pdf.set_font("Arial", size = 15)
     for text in string_list: 
         pdf.cell(0, 0, txt = text,ln =1 )
-    pdf.output(pdf_file)
-    return pdf_file
+    pdf.output(os.path.join(os.getcwd(),pdf_file))
+    return os.path.join(os.getcwd(),pdf_file)
 
 
 
