@@ -24,6 +24,10 @@ def caller_function ():
 
 
 def convert_pdf_to_image(pdf_file):
+    try:
+        os.chdir('/home/ubuntu/invoice-reader')
+    except Exception as e:
+        print("directory not changed to /home/ubuntu/invoice-reader")
     import os
     from pdf2image import convert_from_path
     temp_directory = "temp_directory"
@@ -40,6 +44,10 @@ def convert_pdf_to_image(pdf_file):
 
 
 def convert_image_to_string(image_files):
+    try:
+        os.chdir('/home/ubuntu/invoice-reader')
+    except Exception as e:
+        print("directory not changed to /home/ubuntu/invoice-reader")
     import easyocr
     if "reader" not in globals():
         global reader 
@@ -62,6 +70,10 @@ def convert_image_to_string(image_files):
     return text_extractions
 
 def image_string_post_processing(string_list):
+    try:
+        os.chdir('/home/ubuntu/invoice-reader')
+    except Exception as e:
+        print("directory not changed to /home/ubuntu/invoice-reader")
     replace_list = [
         ("`", ""),
         (";", ":"),
@@ -77,6 +89,10 @@ def image_string_post_processing(string_list):
 
 
 def convert_string_to_pdf(string_list, pdf_file = "image-string-pdf.pdf"):
+    try:
+        os.chdir('/home/ubuntu/invoice-reader')
+    except Exception as e:
+        print("directory not changed to /home/ubuntu/invoice-reader")
     from fpdf import FPDF
     # save FPDF() class into a 
     # variable pdf
@@ -97,6 +113,10 @@ def convert_string_to_pdf(string_list, pdf_file = "image-string-pdf.pdf"):
 
 
 def image_pdf_string(pdf_file):
+    try:
+        os.chdir('/home/ubuntu/invoice-reader')
+    except Exception as e:
+        print("directory not changed to /home/ubuntu/invoice-reader")
     '''
     This fuction is to be used during annotation
     -> Takes a image pdf and gives its equivalent string
@@ -112,6 +132,10 @@ def image_pdf_string(pdf_file):
 
 
 def image_pdf_final_result(pdf_file):
+    try:
+        os.chdir('/home/ubuntu/invoice-reader')
+    except Exception as e:
+        print("directory not changed to /home/ubuntu/invoice-reader")
     '''
     Takes an image pdf returns text pdf form
     '''
