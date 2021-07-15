@@ -21,7 +21,7 @@ def extract_data_(filename_pdf):
 #     os.chdir('/home/drishte/invoice-reader')
     print(os.getcwd())
     templates_folder = 'master_template'
-    print('**********************************')
+    print("#"*50, f"\npwd={os.getcwd()}, pdf_file={filename_pdf}, templates={templates_folder}" )
 #     print(os.getcwd())
 #     os.system('pwd')
     templates = read_templates(templates_folder)
