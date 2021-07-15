@@ -51,7 +51,10 @@ def convert_image_to_string(image_files):
     import easyocr
     if "reader" not in globals():
         global reader 
-        reader = easyocr.Reader(['en'], gpu = False)
+        if os.path.exists("/home/ubuntu/invoice-reader"):
+            reader = easyocr.Reader(['en'], gpu = False, model_storage_directory = "/home/ubuntu/invoice-reader")
+        else:
+            reader = easyocr.Reader(['en'], gpu = False)
     reader_results = []
     text_extractions = []
     for image_file in image_files:
@@ -78,6 +81,7 @@ def image_string_post_processing(string_list):
         ("`", ""),
         (";", ":"),
         ("~", ""),
+        ("|", "")
     ]
     for string in string_list:
         for item in replace_list:
