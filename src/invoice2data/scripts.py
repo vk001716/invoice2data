@@ -54,9 +54,9 @@ def convert_image_to_string(image_files):
         if os.path.exists("/home/ubuntu/invoice-reader"):
             os.environ["EASYOCR_MODULE_PATH"] = "/home/ubuntu/invoice-reader/easyocr"
             os.environ["MODULE_PATH"] = "/home/ubuntu/invoice-reader/easyocr"
-            reader = easyocr.Reader(['en'], gpu = False)
+            reader = easyocr.Reader(['en'], gpu = True)
         else:
-            reader = easyocr.Reader(['en'], gpu = False)
+            reader = easyocr.Reader(['en'], gpu = True)
     reader_results = []
     text_extractions = []
     for image_file in image_files:
